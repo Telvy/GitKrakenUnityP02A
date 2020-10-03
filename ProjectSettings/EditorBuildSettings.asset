@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: ac50d5296b2bc054680a9b844b760a69
+  - enabled: 1
+    path: Assets/Scenes/Level01.unity
+    guid: 1cf961cda3a3052488919c42b25a93b6
+  - enabled: 1
+    path: Assets/Scenes/FPSControllerTest.unity
+    guid: 5b71963716812154da897110f920b3eb
   m_configObjects: {}
