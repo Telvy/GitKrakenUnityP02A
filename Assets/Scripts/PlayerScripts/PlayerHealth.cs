@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    [SerializeField] Text _healthPoints;
-    [SerializeField] GameObject _youDied;
-    [SerializeField] GameObject Player;
+    [SerializeField] Text _healthPoints = null;
+    [SerializeField] GameObject _youDied = null;
+    [SerializeField] GameObject Player = null;
     [SerializeField] AudioClip _deathSound = null;
 
     
@@ -23,7 +23,6 @@ public class PlayerHealth : MonoBehaviour
         //currentHealth = playerHealth;
         _healthBar.SetMaxHealth(playerHealth);
     }
-
 
     public void hurtPlayer(int damage)
     {
