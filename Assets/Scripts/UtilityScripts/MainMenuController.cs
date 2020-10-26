@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class MainMenuController : MonoBehaviour
 {
-    [SerializeField] AudioClip _startingSong;
-    [SerializeField] Text _highScoreTextView;
+    [SerializeField] AudioClip _startingSong = null;
+    [SerializeField] Text _highScoreTextView = null;
 
     //Start is called before the first frame update
     void Start()

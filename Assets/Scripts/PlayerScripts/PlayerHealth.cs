@@ -9,8 +9,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] GameObject _youDied = null;
     [SerializeField] GameObject Player = null;
     [SerializeField] AudioClip _deathSound = null;
-
-    
+    [SerializeField] AudioClip _painImpactSound = null;
 
     public int playerHealth = 100;
    // public int currentHealth;
@@ -31,6 +30,7 @@ public class PlayerHealth : MonoBehaviour
             playerHealth -= damage;
             _healthPoints.text = playerHealth.ToString();
             _healthBar.SetHealth(playerHealth);
+            OneShotSoundManager.PlayClip2D(_painImpactSound, 1);
            
 
             if (playerHealth < 0)

@@ -6,9 +6,9 @@ using UnityEngine.UI;
 
 public class LevelController : MonoBehaviour
 {
-    [SerializeField] Text _currentScoreTextView;
-    [SerializeField] GameObject _pauseMenu;
-    [SerializeField] TempGunScript _tempGunScript;
+    [SerializeField] Text _currentScoreTextView = null;
+    [SerializeField] GameObject _pauseMenu = null;
+    [SerializeField] GunScript _GunScript = null;
 
     int _currentScore;
 
@@ -23,17 +23,17 @@ public class LevelController : MonoBehaviour
         reloadLevel();
         //Increase Score
         //TODO replace with real implementation later
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            IncreaseScore(5);
-        }
+        //if (Input.GetKeyDown(KeyCode.Q))
+        //{
+        //    IncreaseScore(5);
+        //}
 
         //Exit Level
         //TODO bring up popup menu for navigation
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             _pauseMenu.SetActive(true);
-            unlockPause();
+            lockPause();
         }
     }
 
@@ -46,18 +46,18 @@ public class LevelController : MonoBehaviour
         }
     }
 
-    public void lockPause()
+    public void unlockPause()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        _tempGunScript.canFire = true;
+        _GunScript.gameIsPaused = false;
     }
 
-    public void unlockPause()
+    public void lockPause()
     {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        _tempGunScript.canFire = false;
+        _GunScript.gameIsPaused = true;
     }
 
     public void ExitLevel()
